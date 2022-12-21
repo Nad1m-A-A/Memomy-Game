@@ -1,51 +1,51 @@
 const cardArray = [
     {
         title: 'cheeseburger',
-        path: 'images/cheeseburger.png'
+        path: 'photos/pineapple.jpg'
     },
     {
         title: 'fries',
-        path: 'images/fries.png'
+        path: 'photos/watermelon.jpg'
     },
     {
         title: 'hotdog',
-        path: 'images/hotdog.png'
+        path: 'photos/papaya.jpg'
     },
     {
         title: 'ice-cream',
-        path: 'images/ice-cream.png'
+        path: 'photos/orange.jpg'
     },
     {
         title: 'milkshake',
-        path: 'images/milkshake.png'
+        path: 'photos/kiwi.jpg'
     },
     {
         title: 'pizza',
-        path: 'images/pizza.png'
+        path: 'photos/avocado.jpg'
     },
     {
         title: 'cheeseburger',
-        path: 'images/cheeseburger.png'
+        path: 'photos/pineapple.jpg'
     },
     {
         title: 'fries',
-        path: 'images/fries.png'
+        path: 'photos/watermelon.jpg'
     },
     {
         title: 'hotdog',
-        path: 'images/hotdog.png'
+        path: 'photos/papaya.jpg'
     },
     {
         title: 'ice-cream',
-        path: 'images/ice-cream.png'
+        path: 'photos/orange.jpg'
     },
     {
         title: 'milkshake',
-        path: 'images/milkshake.png'
+        path: 'photos/kiwi.jpg'
     },
     {
         title: 'pizza',
-        path: 'images/pizza.png'
+        path: 'photos/avocado.jpg'
     }
 ];
 // const sortedCardArray = cardArray.sort(() => 0.5 - Math.random()); 
@@ -78,17 +78,19 @@ function createImages(){
     
         img.setAttribute('data-id', i)
         img.setAttribute('src', card.path);    
+        img.setAttribute('class', 'wooden_hand');    
         grid.append(img);
 
         setTimeout(() => {
-        img.setAttribute('src', 'images/blank.png');
+        img.setAttribute('src', 'photos/wooden_hand.jpg');
+        // img.setAttribute('src', 'images/blank.png');
         grid.append(img);
         img.addEventListener('click', function(e){
             const clicked = e.target;
             if(clicked.getAttribute('src').includes('white')) return
             flipCard(clicked);
         })
-        }, 2000)
+        }, 5000)
     });
 };
 
@@ -101,19 +103,19 @@ function flipCard(clicked){
     chosenCardsIds.push(cardId);
 
     if(chosenCards.length === 2)
-    setTimeout(checkMatch, 100);
+    setTimeout(checkMatch, 300);
 };
 
 function checkMatch(){
     const cards = grid.querySelectorAll('img');
 
     if(chosenCards[0] === chosenCards[1]){
-        cards[chosenCardsIds[0]].setAttribute('src', 'images/white.png');
-        cards[chosenCardsIds[1]].setAttribute('src', 'images/white.png');
+        cards[chosenCardsIds[0]].setAttribute('src', 'photos/white.png');
+        cards[chosenCardsIds[1]].setAttribute('src', 'photos/white.png');
         score++;
     } else {
-        cards[chosenCardsIds[0]].setAttribute('src', 'images/blank.png');
-        cards[chosenCardsIds[1]].setAttribute('src', 'images/blank.png');
+        cards[chosenCardsIds[0]].setAttribute('src', 'photos/wooden_hand.jpg');
+        cards[chosenCardsIds[1]].setAttribute('src', 'photos/wooden_hand.jpg');
         score--;
     }
 
