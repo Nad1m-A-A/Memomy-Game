@@ -1,23 +1,44 @@
-*{
-    background-color: #333;
-    color: peru;
-}
 
 body {
+    font-family: 'Courier New', Courier, monospace;
     position: relative;
+    background-color: #111;
+    color: #3A4F7A;
 }
 
 #game-feild {
+    width: 100%;
+    text-align: center;
     position: absolute;
-    top: 40%;
+    top: 48%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
 
+.status {
+    padding-bottom: 0.5rem;
+}
+
+#round, #score {
+    color: white;
+}
+
 #grid {
-    width: 400px;
-    height: 300px;
+    max-width: 70%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
 
+.wooden_hand {
+    /* width: 230px; */
+    /* height: 200px; */
+    width: 210px;
+    height: 180px;
+    border: solid 1px black;
+    border-radius: 5px;
+    margin: 0.1rem;
+    box-shadow: 1px 1px 1px white;
 }
