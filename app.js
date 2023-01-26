@@ -78,7 +78,7 @@ function createImages(){
     
         img.setAttribute('data-id', i)
         img.setAttribute('src', card.path);    
-        img.setAttribute('class', 'wooden_hand');    
+        img.setAttribute('class', 'image');    
         grid.append(img);
 
         setTimeout(() => {
